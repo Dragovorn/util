@@ -3,6 +3,7 @@ package com.dragovorn.util.time;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// TODO: update to a SimpleDateFormat type thing
 public class DateHelper {
 
     private static SimpleDateFormat first = new SimpleDateFormat("EEE, MMM ");
