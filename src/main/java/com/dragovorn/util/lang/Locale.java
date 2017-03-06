@@ -22,13 +22,14 @@ public class Locale {
     private final String name;
 
     public Locale(String path, String name) {
+        
         this.properties = new HashMap<>();
         this.name = name;
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(Locale.class.getResourceAsStream(path)));
-
-        String line;
-        try {
+        try(InputStream stream = Locale.class.getResourceAsStream(path);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+            
+            String line;
             while ((line = reader.readLine()) != null) {
                 List<String> str = splitter.splitToList(line);
 
