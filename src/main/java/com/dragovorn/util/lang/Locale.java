@@ -4,6 +4,7 @@ import com.google.common.base.Splitter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class Locale {
         this.name = name;
 
         try(InputStream stream = Locale.class.getResourceAsStream(path);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
             
             String line;
             while ((line = reader.readLine()) != null) {
