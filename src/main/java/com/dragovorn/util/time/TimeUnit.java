@@ -18,15 +18,15 @@ public enum TimeUnit {
         return this.conversion;
     }
 
-    public long remainder(long num) {
+    public long remainingMillis(long num) {
         return num % this.conversion;
     }
 
-    public int convert(long num) {
+    public int fromMillis(long num) {
         return (int) (num / this.conversion);
     }
 
-    public long convertTo(int num) {
+    public long toMillis(int num) {
         return (long) num * this.conversion;
     }
 }
