@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-mvn clean deploy package shade:shade
+mvn deploy package shade:shade
