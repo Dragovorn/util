@@ -53,6 +53,15 @@ public class Locale {
         }
     }
 
+    /**
+     * Translates and formats the given key by looking to see
+     * if it has a corresponding entry in the map
+     * if no translation is found the key will be returned
+     *
+     * @param key
+     * @param objs
+     * @return
+     */
     public String translate(String key, Object... objs) {
         String translate = this.properties.get(key);
 
