@@ -3,7 +3,16 @@ package com.dragovorn.util.time;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-// TODO: update to a SimpleDateFormat type thing
+/**
+ * A DateHelper that was written to allow for easy readable dates.
+ * Will be replaced by a DateFormat.
+ *
+ * @deprecated Will be made into a DateFormat later
+ * @author Andrew Burr
+ * @since 0.0.1
+ * @version 0.1
+ */
+@Deprecated
 public class DateHelper {
 
     private static SimpleDateFormat first = new SimpleDateFormat("EEE, MMM ");

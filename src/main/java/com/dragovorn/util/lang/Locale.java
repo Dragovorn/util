@@ -12,6 +12,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+/**
+ * A Localization Library that can read in localization files and
+ * add them to a key value map for translation lookups.
+ *
+ * @author Andrew Burr
+ * @since 0.0.2
+ * @version 1.2
+ */
 public class Locale {
 
     private static final Splitter splitter = Splitter.on('=').limit(2);
@@ -45,6 +53,15 @@ public class Locale {
         }
     }
 
+    /**
+     * Translates and formats the given key by looking to see
+     * if it has a corresponding entry in the map
+     * if no translation is found the key will be returned
+     *
+     * @param key
+     * @param objs
+     * @return
+     */
     public String translate(String key, Object... objs) {
         String translate = this.properties.get(key);
 
@@ -57,6 +74,11 @@ public class Locale {
 
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.properties.hashCode() + this.name.hashCode();
     }
 
     @Override
