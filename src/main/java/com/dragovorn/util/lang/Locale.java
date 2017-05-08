@@ -35,9 +35,8 @@ public class Locale {
         this.properties = new HashMap<>();
         this.name = name;
 
-        try(InputStream stream = Locale.class.getResourceAsStream(path);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
-            
+        try (InputStream stream = Locale.class.getResourceAsStream(path); BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+
             String line;
             while ((line = reader.readLine()) != null) {
                 List<String> str = splitter.splitToList(line);
@@ -58,18 +57,18 @@ public class Locale {
      * if it has a corresponding entry in the map
      * if no translation is found the key will be returned
      *
-     * @param key
-     * @param objs
-     * @return
+     * @param key The key to translate to
+     * @param objects The objects to format into the translation
+     * @return The formatted and translated key.
      */
-    public String translate(String key, Object... objs) {
+    public String translate(String key, Object... objects) {
         String translate = this.properties.get(key);
 
         if (translate == null) {
             translate = key;
         }
 
-        return MessageFormat.format(translate, objs);
+        return MessageFormat.format(translate, objects);
     }
 
     public String getName() {
