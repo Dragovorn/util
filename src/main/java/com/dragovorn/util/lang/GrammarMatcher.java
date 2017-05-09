@@ -14,7 +14,7 @@ public class GrammarMatcher {
 
         for (int x = 0; x < this.code.length && x < match.length; x++) {
 
-            if (this.code[x].equalsIgnoreCase("*")) {
+            if (this.code[x].equals("*")) {
                 continue;
             }
 

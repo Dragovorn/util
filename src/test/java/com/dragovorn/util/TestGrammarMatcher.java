@@ -14,5 +14,11 @@ public class TestGrammarMatcher {
         assertEquals(true, matcher.matches("LUL TeSt TEST"));
         assertEquals(false, matcher.matches("LUL TeT TEST"));
         assertEquals(false, matcher.matches("LUL TeSt tEST"));
+
+        matcher = new GrammarMatcher("* \\?itest TEST");
+
+        assertEquals(false, matcher.matches("LUL TeSt TEST"));
+        assertEquals(false, matcher.matches("LUL TeT TEST"));
+        assertEquals(false, matcher.matches("LUL TeSt tEST"));
     }
 }
