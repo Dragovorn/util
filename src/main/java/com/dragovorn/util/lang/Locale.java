@@ -30,6 +30,12 @@ public class Locale {
 
     private final String name;
 
+    /**
+     * Creates a basic Locale, takes a path to the resource in the jar
+     *
+     * @param path Path to file in jar
+     * @param name Name to reference it by
+     */
     public Locale(String path, String name) {
         
         this.properties = new HashMap<>();
@@ -71,6 +77,11 @@ public class Locale {
         return MessageFormat.format(translate, objects);
     }
 
+    /**
+     * Gets the name of the Locale
+     *
+     * @return The name of the locale
+     */
     public String getName() {
         return this.name;
     }
